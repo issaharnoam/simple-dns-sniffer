@@ -205,5 +205,8 @@ Experimental MacOS Support addition using XCode
 1. verify you compiled the libpcap with --prefix=/usr/local/ (and without rdma support, there is a need for --enable-rdma=no and fix bug in configure file in relevant section where this setting is not applied) 
 2. using static libpcap.a library
 
-![Alt text](./images/Simple Dns sniffer running in MacOS Xcode debugger.png?raw=true)
-
+XCode screen shot running in debugger
+---------------------------------
+<p align="center">
+  <img src="./images/Simple Dns sniffer running in MacOS Xcode debugger.png" width="100%" title="hover text">
+</p>
