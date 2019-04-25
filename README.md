@@ -3,7 +3,7 @@ Simple DNS Sniffer
 
 Note
 ----------
-This fork was created for experimental support for MacOS - some code tailoring was applied. Not fully tested but may server for POC.
+This fork was created for experimental support for MacOS - some code tailoring was applied. Not fully tested but may be useful for POCs.
 
 Background
 ----------
