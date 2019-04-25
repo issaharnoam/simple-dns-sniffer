@@ -200,3 +200,8 @@ Ideas for Future Development
 * Test on libc implementations other than glibc (i.e. uclibc.)
 * Further optimize the code.
 
+MacOS Support addition using XCode
+----------------------------
+1. verify you compiled the libpcap with --prefix=/usr/local/ (and without rdma support, there is a need for --enable-rdma=no and fix bug in configure file in relevant section where this setting is not applied) 
+2. using static libpcap.a library
+
