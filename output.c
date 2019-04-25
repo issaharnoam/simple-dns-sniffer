@@ -9,7 +9,9 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
-#include <features.h>
+#ifdef __linux__
+	#include <features.h>
+#endif
 #include <arpa/inet.h>
 #include <pcap/pcap.h>
 

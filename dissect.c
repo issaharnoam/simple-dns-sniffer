@@ -17,9 +17,16 @@
 #include <netinet/ip6.h>
 #include <netinet/tcp.h>
 #include <netinet/udp.h>
-#include <linux/if.h>
-
+#ifdef __linux__
+	#include <linux/if.h>
+#endif
 #include "dissect.h"
+#ifdef __APPLE__
+	#define ETH_P_IP 0x0800
+	#define ETH_P_IPV6 0x86DD
+	#define ETH_HLEN 14
+	#define IFF_UP 1<<0
+#endif
 
 /**
  * Ensure that pkt is between data and data + len.
@@ -64,7 +71,13 @@ int dissect_ip_packet(int lnk, struct pcap_pkthdr *hdr,
 		break;
 		case DLT_IPV6: /* Raw IPv6 */
 			protocol = ETH_P_IPV6;
-		break;
+            break;
+#ifdef __APPLE__
+//JUST a guess, but seems working... :-)
+        case DLT_LOOP:
+            protocol = ETH_P_IP;
+            break;
+#endif 
 	}
 
 	if (check_packet_ptr(pkt, data, hdr->len) || !protocol)
@@ -73,11 +86,19 @@ int dissect_ip_packet(int lnk, struct pcap_pkthdr *hdr,
 	/* Get the IP protocol used, and seek past the IP header. */
 	switch (protocol) {
 		case ETH_P_IP:
+		#ifdef __APPLE__
+			protocol = ((struct ip *)pkt)->ip_p;
+			dpkt->sa.ip  = ((struct ip *)pkt)->ip_src.s_addr;
+			dpkt->da.ip  = ((struct ip *)pkt)->ip_dst.s_addr;
+			dpkt->family = AF_INET;
+			pkt = pkt + (((struct ip *)pkt)->ip_hl << 2);
+		#else
 			protocol = ((struct iphdr *)pkt)->protocol;
 			dpkt->sa.ip  = ((struct iphdr *)pkt)->saddr;
 			dpkt->da.ip  = ((struct iphdr *)pkt)->daddr;
 			dpkt->family = AF_INET;
 			pkt = pkt + (((struct iphdr *)pkt)->ihl << 2);
+		#endif
 		break;
 		case ETH_P_IPV6:
 			dpkt->sa.ip6 = ((struct ip6_hdr *)pkt)->ip6_src;
@@ -97,14 +118,28 @@ int dissect_ip_packet(int lnk, struct pcap_pkthdr *hdr,
 	dpkt->ip_proto = protocol & 0xff;
 	switch (dpkt->ip_proto) {
 		case IPPROTO_UDP:
+		#ifdef __APPLE__
+		//not tested...
+			dpkt->sp = ntohs(((struct ip *)pkt)->ip_src.s_addr);
+			dpkt->dp = ntohs(((struct ip *)pkt)->ip_dst.s_addr);
+			pkt += 8;
+		#else
 			dpkt->sp = ntohs(((struct udphdr *)pkt)->source);
 			dpkt->dp = ntohs(((struct udphdr *)pkt)->dest);
 			pkt += 8;
+		#endif
 		break;
 		case IPPROTO_TCP:
+		#ifdef __APPLE__
+		//not tested...
+			dpkt->sp = ntohs(((struct tcphdr *)pkt)->th_sport);
+			dpkt->dp = ntohs(((struct tcphdr *)pkt)->th_dport);
+			pkt += (((struct tcphdr *)pkt)->th_off << 2) + 1;
+		#else
 			dpkt->sp = ntohs(((struct tcphdr *)pkt)->source);
 			dpkt->dp = ntohs(((struct tcphdr *)pkt)->dest);
 			pkt += (((struct tcphdr *)pkt)->doff << 2) + 1;
+		#endif	
 		break;
 		default:
 			protocol = 0;

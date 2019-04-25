@@ -147,7 +147,12 @@ int main(int argc, char *argv[])
 	/* Ensure that we support the interface's link-level header */
 	link_type = pcap_datalink(session);
 	if (link_type != DLT_LINUX_SLL && link_type != DLT_EN10MB &&
-	    link_type != DLT_IPV4 && link_type != DLT_IPV6) {
+	    link_type != DLT_IPV4 && link_type != DLT_IPV6 
+		#ifdef __APPLE__
+		&& link_type!=DLT_LOOP) {
+		#else
+		)
+		#endif
 		fprintf(stderr, "Unsupported link type: %d\n", link_type);
 		goto err;
 	}
