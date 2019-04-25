@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0642D0A42270605800724200 /* libpcap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0642D0A32270605800724200 /* libpcap.a */; };
+		065217022271879900C2EEE3 /* dissect.c in Sources */ = {isa = PBXBuildFile; fileRef = 065216FB2271879900C2EEE3 /* dissect.c */; };
+		065217032271879900C2EEE3 /* output.c in Sources */ = {isa = PBXBuildFile; fileRef = 065216FF2271879900C2EEE3 /* output.c */; };
+		065217042271879900C2EEE3 /* sniffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 065217012271879900C2EEE3 /* sniffer.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0642D08B227053EC00724200 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0642D08D227053EC00724200 /* simple-dns-sniffer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "simple-dns-sniffer"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0642D0A32270605800724200 /* libpcap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpcap.a; path = ../../../../usr/local/lib/libpcap.a; sourceTree = "<group>"; };
+		065216FB2271879900C2EEE3 /* dissect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dissect.c; sourceTree = "<group>"; };
+		065216FC2271879900C2EEE3 /* dissect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dissect.h; sourceTree = "<group>"; };
+		065216FD2271879900C2EEE3 /* extra */ = {isa = PBXFileReference; lastKnownFileType = folder; path = extra; sourceTree = "<group>"; };
+		065216FE2271879900C2EEE3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		065216FF2271879900C2EEE3 /* output.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = output.c; sourceTree = "<group>"; };
+		065217002271879900C2EEE3 /* output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output.h; sourceTree = "<group>"; };
+		065217012271879900C2EEE3 /* sniffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sniffer.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0642D08A227053EC00724200 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0642D0A42270605800724200 /* libpcap.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0642D084227053EC00724200 = {
+			isa = PBXGroup;
+			children = (
+				065216FB2271879900C2EEE3 /* dissect.c */,
+				065216FC2271879900C2EEE3 /* dissect.h */,
+				065216FD2271879900C2EEE3 /* extra */,
+				065216FE2271879900C2EEE3 /* LICENSE */,
+				065216FF2271879900C2EEE3 /* output.c */,
+				065217002271879900C2EEE3 /* output.h */,
+				065217012271879900C2EEE3 /* sniffer.c */,
+				0642D08E227053EC00724200 /* Products */,
+				0642D0A022705FB000724200 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0642D08E227053EC00724200 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0642D08D227053EC00724200 /* simple-dns-sniffer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0642D0A022705FB000724200 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0642D0A32270605800724200 /* libpcap.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0642D08C227053EC00724200 /* simple-dns-sniffer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0642D094227053EC00724200 /* Build configuration list for PBXNativeTarget "simple-dns-sniffer" */;
+			buildPhases = (
+				0642D089227053EC00724200 /* Sources */,
+				0642D08A227053EC00724200 /* Frameworks */,
+				0642D08B227053EC00724200 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "simple-dns-sniffer";
+			productName = simple_tcp_sniffer;
+			productReference = 0642D08D227053EC00724200 /* simple-dns-sniffer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0642D085227053EC00724200 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Cynet;
+				TargetAttributes = {
+					0642D08C227053EC00724200 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = J44C5R4YC4;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0642D088227053EC00724200 /* Build configuration list for PBXProject "simple-dns-sniffer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0642D084227053EC00724200;
+			productRefGroup = 0642D08E227053EC00724200 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0642D08C227053EC00724200 /* simple-dns-sniffer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0642D089227053EC00724200 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				065217032271879900C2EEE3 /* output.c in Sources */,
+				065217042271879900C2EEE3 /* sniffer.c in Sources */,
+				065217022271879900C2EEE3 /* dissect.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0642D092227053EC00724200 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0642D093227053EC00724200 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0642D095227053EC00724200 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = J44C5R4YC4;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					__OpenBSD__,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0642D096227053EC00724200 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = J44C5R4YC4;
+				GCC_PREPROCESSOR_DEFINITIONS = __OpenBSD__;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0642D088227053EC00724200 /* Build configuration list for PBXProject "simple-dns-sniffer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0642D092227053EC00724200 /* Debug */,
+				0642D093227053EC00724200 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0642D094227053EC00724200 /* Build configuration list for PBXNativeTarget "simple-dns-sniffer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0642D095227053EC00724200 /* Debug */,
+				0642D096227053EC00724200 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0642D085227053EC00724200 /* Project object */;
+}
