@@ -17,10 +17,13 @@
 #include <netinet/ip6.h>
 #include <netinet/tcp.h>
 #include <netinet/udp.h>
+
 #ifdef __linux__
 	#include <linux/if.h>
 #endif
+
 #include "dissect.h"
+
 #ifdef __APPLE__
 	#define ETH_P_IP 0x0800
 	#define ETH_P_IPV6 0x86DD

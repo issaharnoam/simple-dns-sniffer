@@ -99,7 +99,7 @@ static void usage(const char *procname)
 }
 
 int main(int argc, char *argv[])
-{
+{ 
 	pcap_t *session = NULL;
 	int link_type, i;
 	bpf_u_int32 netmask, ip;
@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
 			break;
 			default:
 				goto invalid_arg;
-		}
+		} 
 	}
 
 	/* Create a new capture session */
@@ -148,11 +148,11 @@ int main(int argc, char *argv[])
 	link_type = pcap_datalink(session);
 	if (link_type != DLT_LINUX_SLL && link_type != DLT_EN10MB &&
 	    link_type != DLT_IPV4 && link_type != DLT_IPV6 
-		#ifdef __APPLE__
-		&& link_type!=DLT_LOOP) {
-		#else
-		)
-		#endif
+#ifdef __APPLE__
+&& link_type!=DLT_LOOP) {
+#else
+){
+#endif
 		fprintf(stderr, "Unsupported link type: %d\n", link_type);
 		goto err;
 	}
